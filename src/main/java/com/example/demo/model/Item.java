@@ -7,51 +7,45 @@ import javax.persistence.Transient;
 @Entity
 public class Item {
 
-	@Id
-	private int id;
-	private String name;
-	private int price;
-	private int quantity;
+    @lombok.Getter
+    @Id
+    private int id;
+    @lombok.Getter
+    private String name;
+    private int price;
+    private int quantity;
 
-	@Transient
-	private int value;
+    @Transient
+    private int value;
 
-	protected Item() {
-		
-	}
-	
-	public Item(int id, String name, int price, int quantity) {
-		this.id = id;
-		this.name = name;
-		this.price = price;
-		this.quantity = quantity;
-	}
+    protected Item() {
 
-	public int getId() {
-		return id;
-	}
+    }
 
-	public String getName() {
-		return name;
-	}
+    public Item(int id, String name, int price, int quantity) {
+        this.id = id;
+        this.name = name;
+        this.price = price;
+        this.quantity = quantity;
+    }
 
-	public int getPrice() {
-		return price;
-	}
+    public int getPrice() {
+        return price;
+    }
 
-	public int getQuantity() {
-		return quantity;
-	}
+    public int getQuantity() {
+        return quantity;
+    }
 
-	public int getValue() {
-		return value;
-	}
+    public int getValue() {
+        return value;
+    }
 
-	public void setValue(int value) {
-		this.value = value;
-	}
+    public void setValue(int value) {
+        this.value = value;
+    }
 
-	public String toString() {
-		return String.format("Item[%d, %s, %d, %d]", id, name, price, quantity);
-	}
+    public String toString() {
+        return String.format("Item[%d, %s, %d, %d]", id, name, price, quantity);
+    }
 }
